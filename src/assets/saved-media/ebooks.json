@@ -1,0 +1,82 @@
+[
+    {
+        "name":"Sesenta semanas en el trópico",
+        "out":"2003",
+        "author": "Antonio Escohotado",
+        "image": "assets/images/ebooks/sesentasemanas.jpeg",
+        "inserted": "01-05-2020",
+        "id": "1"
+    },
+    {
+        "name":"Aprendiendo de las drogas",
+        "out":"2006",
+        "author": "Antonio Escohotado",
+        "image": "assets/images/ebooks/aprendiendodelasdrogas.webp",
+        "inserted": "01-02-2021",
+        "id": "2"
+    },
+    {
+        "name":"El espíritu de la comedia",
+        "out":"2006",
+        "author": "Antonio Escohotado",
+        "image": "assets/images/ebooks/elespiritudelacomedia.webp",
+        "inserted": "01-02-2022",
+        "id": "3"
+    },
+    {
+        "name":"Historia elemental de las drogas",
+        "out":"2006",
+        "author": "Antonio Escohotado",
+        "image": "assets/images/ebooks/historiaelementaldelasdrogas.jpg",
+        "inserted": "11-02-2020",
+        "id": "4"
+    },
+    {
+        "name":"Rameras y esposas",
+        "out":"2006",
+        "author": "Antonio Escohotado",
+        "image": "assets/images/ebooks/ramerasyesposas.jpg",
+        "inserted": "15-03-2019",
+        "id": "5"
+    },
+    {
+        "name":"Billy Summers",
+        "out":"1990",
+        "author": "Stephen King",
+        "image": "assets/images/ebooks/billysummers.jpg",
+        "inserted": "30-12-2018",
+        "id": "6"
+    },
+    {
+        "name":"Después",
+        "out":"2022",
+        "author": "Stephen King",
+        "image": "assets/images/ebooks/despues.jpg",
+        "inserted": "30-11-2018",
+        "id": "7"
+    },
+    {
+        "name":"Cuento de hadas",
+        "out":"2022",
+        "author": "Stephen King",
+        "image": "assets/images/ebooks/cuentodehadas.jpg",
+        "inserted": "30-12-2019",
+        "id": "8"
+    },
+    {
+        "name":"It",
+        "out":"1994",
+        "author": "Stephen King",
+        "image": "assets/images/ebooks/it.jpg",
+        "inserted": "15-12-2020",
+        "id": "9"
+    },
+    {
+        "name":"El resplandor",
+        "out":"1990",
+        "author": "Stephen King",
+        "image": "assets/images/ebooks/elresplandor.jpg",
+        "inserted": "30-12-2018",
+        "id": "10"
+    }
+]

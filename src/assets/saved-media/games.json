@@ -1,0 +1,154 @@
+[
+    {
+        "name": "GTA San Andreas",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/sanandreas.jpg",        
+        "inserted": "01-01-2021",
+        "id": "1"
+    },
+    {
+        "name": "GTA Vice City",
+        "out": "2004",
+        "platform": "PS2",
+        "image": "assets/images/games/vicecity.jpg",        
+        "inserted": "01-02-2021",
+        "id": "2"
+    },
+    {
+        "name": "GTA Liberty City Stories",
+        "out": "2008",
+        "platform": "PS2",
+        "image": "assets/images/games/liberty.jpg",        
+        "inserted": "01-02-2022",
+        "id": "3"
+    },
+    {
+        "name": "Resident Evil 4",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/resident.jpg",        
+        "inserted": "11-02-2020",
+        "id": "4"
+    },
+    {
+        "name": "Formula One 2005",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/formula1.jpg",        
+        "inserted": "15-03-2019",
+        "id": "5"
+    },
+    {
+        "name": "Splinter Cell: Chaos Theory",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/splinter.jpg",        
+        "inserted": "30-12-2018",
+        "id": "6"
+    },
+    {
+        "name": "Cold Fear",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/coldfear.jpg",        
+        "inserted": "30-11-2018",
+        "id": "7"
+    },
+    {
+        "name": "The Warriors",
+        "out": "2005",
+        "platform": "PS2",
+        "image": "assets/images/games/thewarriors.jpg",        
+        "inserted": "30-12-2019",
+        "id": "8"
+    },
+    {
+        "name": "God of War 2",
+        "out": "2007",
+        "platform": "PS2",
+        "image": "assets/images/games/godofwar.jpg",        
+        "inserted": "15-12-2020",
+        "id": "9"
+    },
+    {
+        "name": "Crash: Lucha de Titanes",
+        "out": "2007",
+        "platform": "PS2",
+        "image": "assets/images/games/crash.jpg",        
+        "inserted": "30-12-2018",
+        "id": "10"
+    },
+    {
+        "name": "Rule of Rose",
+        "out": "2006",
+        "platform": "PS2",
+        "image": "assets/images/games/rule of rose.jpg",        
+        "inserted": "05-12-2021",
+        "id": "11"
+    },
+    {
+        "name": "Fifa 10",
+        "out": "2009",
+        "platform": "PS3",
+        "image": "assets/images/games/fifa10.jpg",        
+        "inserted": "30-12-2018",
+        "id": "12"
+    },
+    {
+        "name": "Batman: Arkham Asylum",
+        "out": "2009",
+        "platform": "PS3",
+        "image": "assets/images/games/batman.jpg",        
+        "inserted": "01-01-2023",
+        "id": "13"
+    },
+    {
+        "name": "Assassin's Creed 2",
+        "out": "2009",
+        "platform": "PS3",
+        "image": "assets/images/games/assassins.jpg",        
+        "inserted": "30-12-2018",
+        "id": "14"
+    },
+    {
+        "name": "Bloodborne",
+        "out": "2015",
+        "platform": "PS4",
+        "image": "assets/images/games/bloodborne.jpg",        
+        "inserted": "15-12-2018",
+        "id": "15"
+    },
+    {
+        "name": "Soma",
+        "out": "2015",
+        "platform": "PS4",
+        "image": "assets/images/games/soma.jpg",        
+        "inserted": "30-12-2021",
+        "id": "16"
+    },
+    {
+        "name": "God of War: Ragnarok",
+        "out": "2022",
+        "platform": "PS5",
+        "image": "assets/images/games/godofwarragnarok.jpg",        
+        "inserted": "30-12-2022",
+        "id": "17"
+    },
+    {
+        "name": "NBA 2K23",
+        "out": "2009",
+        "platform": "PS5",
+        "image": "assets/images/games/nba.jpg",        
+        "inserted": "30-12-2022",
+        "id": "18"
+    },
+    {
+        "name": "Demon's Souls",
+        "out": "2020",
+        "platform": "PS5",
+        "image": "assets/images/games/demonssouls.jpg",        
+        "inserted": "30-12-2022",
+        "id": "19"
+    }
+]

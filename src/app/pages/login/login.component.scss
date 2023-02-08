@@ -1,0 +1,85 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87%;
+}
+
+.login-data{
+    width: auto;
+    height: auto;
+    padding: 15px;
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.21);
+    border-radius: 4px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    vertical-align: center;
+    flex-direction: column;
+}
+
+.login-box{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    background: rgb(14 14 14);
+    border-radius: 5px;
+    display: flex;
+    border: 1px solid rgb(255 64 129);
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 6px 6px 6px 4px rgb(205 92 184 / 24%);
+}
+
+.inputs-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title{
+    position: absolute;
+    top: 26px;
+    left: 39px;
+    font-family: 'AnekTamil';
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(253, 246, 218);
+}
+
+.input{
+    margin: auto;
+}
+
+.login-button-box{
+    margin-top: 9px;
+    position: relative;
+    height: 43px;
+    width: 70%;
+}
+
+.login-button{
+    width: 186px;
+    height: 36px;
+    background: #0e0e0e;
+    border: 1px solid #fdf6da;
+    transition: 180ms ease-in all;
+}
+
+.login-button span{
+    color: #fdf6da;
+}
+
+.login-button:hover{
+    color: black;
+    border: 1px solid #0e0e0e;
+    background: rgb(255, 64, 129);
+    margin-top: -5px;
+    margin-left: -8px;
+    box-shadow: 3px 3px 1px 0px rgba(255, 64, 129, 24%);
+}
+

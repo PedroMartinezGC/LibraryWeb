@@ -1,0 +1,126 @@
+<div class="content" #pageContent>
+
+    <div style="display: flex; justify-content: flex-start; align-items: center">
+        <div><span class="title">Mis Películas</span></div>
+
+        <!-- Add element button -->
+        <div>
+            <button class="add-button" mat-raised-button color="primary" (click)="setAddition()">
+                <mat-icon class="add-icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home">add</mat-icon>Película
+            </button>
+        </div>
+
+        <!-- Searchbar -->
+        <div class="searchbar">
+            <app-custom-searchbar placeholder="Busque su película..." (inputChange)="getSearchbarText($event)" color="#3f51b5"></app-custom-searchbar>
+        </div>
+
+        <!-- Add/edit element inputs (emerging window) -->
+        <div #addNewModal class="add-new" [ngClass]="(movieEditedIndex != undefined) ? 'edit' : ''">
+            <mat-icon matDatepickerToggleIcon class="close-button" (click)="showCreateNewMovieModal(false)">close</mat-icon>
+            <div class="add-new-inputs">
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [(ngModel)]="movieInputs.name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Fecha Lanzamiento</mat-label>
+                        <input matInput [(ngModel)]="movieInputs.out">
+                    </mat-form-field>
+                </div>
+                <div class="custom-selector">
+                    <mat-form-field appearance="fill" color="accent">
+                        <mat-label>Género</mat-label>
+                        <mat-select [(value)]="movieInputs.gender">
+                            <mat-option value="Thriller">Thriller</mat-option>
+                            <mat-option value="Suspense">Suspense</mat-option>
+                            <mat-option value="Acción">Acción</mat-option>
+                            <mat-option value="Histórico">Histórico</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <input class="input-file" type="file" (change)="imageChanged($event)">
+                    <div class="selected-file">{{ movieInputs.image }}</div>
+                </div>
+            </div>
+
+            <!-- Confirm save/edit buttons -->
+            <div>
+                <button class="save-button" mat-raised-button color="primary" (click)="(movieEditedIndex != undefined) ? editMovie() : addMovie()">
+                    <span *ngIf="movieEditedIndex == undefined" style="color: black">Guardar</span>
+                    <span *ngIf="movieEditedIndex != undefined" style="color: black">Editar</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Filter inputs -->
+    <div class="filter">
+        <div class="date-filter">
+            <div>
+                <mat-form-field color="primary" appearance="fill">
+                    <mat-label>Fecha inicial</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]="movieFilter.startDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="movieFilter.startDate" (click)="clearDate('startDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field color="primary" appearance="fill">
+                    <mat-label>Fecha final</mat-label>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="movieFilter.finalDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="movieFilter.finalDate" (click)="clearDate('finalDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" color="primary">
+                    <mat-label>Género</mat-label>
+                    <mat-select [(value)]="movieFilter.gender" (selectionChange)="filterData()">
+                      <mat-option value="all">Todas</mat-option>
+                      <mat-option value="Thriller">Thriller</mat-option>
+                      <mat-option value="Suspense">Suspense</mat-option>
+                      <mat-option value="Acción">Acción</mat-option>
+                      <mat-option value="Histórico">Histórico</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of elements -->
+    <div class="list">
+        <div *ngFor="let movie of moviesList; let i = index">
+            <div class="element-detail" (mouseover)="checkMovieHover(i, true)"  (mouseout)="checkMovieHover(i, false)">
+                <div class="portrait">
+                    <img [src]="movie.image" alt="" style="width: auto; height: 240px">
+
+                    <div class="action-buttons" [ngStyle]="(movieHoveredIndex == i) ? {'width': '30px', 'border': 'inherit'} : {'width': '0px', 'border': '0px'}">
+                        <mat-icon class="action-icon" style="color: #d70808" (click)="deleteMovie(movie.id)">delete</mat-icon>
+                        <mat-icon class="action-icon" style="color: #f5c514" (click)="setEdition(i, movie.id); showCreateNewMovieModal(true)">edit</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <span class="name-label">{{ movie.name }}</span>
+                    <div>
+                        <span class="out-date-label">{{ movie.gender }}</span>  
+                        <span class="out-date-label" style="margin-left: 7px">{{ movie.out }}</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

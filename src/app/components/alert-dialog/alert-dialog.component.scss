@@ -1,0 +1,18 @@
+.message{
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.close-button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: white;
+    cursor: pointer;
+}

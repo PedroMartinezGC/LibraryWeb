@@ -1,0 +1,100 @@
+<div class="content" #pageContent>
+
+    <div style="display: flex; justify-content: flex-start; align-items: center">
+        <div><span class="title">Mis eBooks</span></div>
+
+        <!-- Add element button -->
+        <div>
+            <button class="add-button" mat-raised-button color="warn" (click)="setAddition()">
+                <mat-icon class="add-icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home">add</mat-icon>eBook
+            </button>
+        </div>
+
+        <!-- Searchbar -->
+        <div class="searchbar">
+            <app-custom-searchbar placeholder="Busque su libro..." (inputChange)="getSearchbarText($event)" color="#f44336"></app-custom-searchbar>
+        </div>
+
+        <!-- Add/edit element inputs (emerging window) -->
+        <div #addNewModal class="add-new" [ngClass]="(ebookEditedIndex != undefined) ? 'edit' : ''">
+            <mat-icon matDatepickerToggleIcon class="close-button" (click)="showCreateNewEbookModal(false)">close</mat-icon>
+            <div class="add-new-inputs">
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [(ngModel)]="ebookInputs.name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Fecha Lanzamiento</mat-label>
+                        <input matInput [(ngModel)]="ebookInputs.out">
+                    </mat-form-field>
+                </div>
+                <div style="margin-bottom: 17px">
+                    <input class="input-file" type="file" (change)="imageChanged($event)">
+                    <div class="selected-file">{{ ebookInputs.image }}</div>
+                </div>
+            </div>
+
+            <!-- Confirm save/edit buttons -->
+            <div>
+                <button class="save-button" mat-raised-button color="primary" (click)=" (ebookEditedIndex != undefined) ? editEbook() : addEbook()">
+                    <span *ngIf="ebookEditedIndex == undefined" style="color: black">Guardar</span>
+                    <span *ngIf="ebookEditedIndex != undefined" style="color: black">Editar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter inputs -->
+    <div class="filter">
+        <div class="date-filter">
+            <div>
+                <mat-form-field color="warn" appearance="fill">
+                    <mat-label>Fecha inicial</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]="ebookFilter.startDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="ebookFilter.startDate" (click)="clearDate('startDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field color="warn" appearance="fill">
+                    <mat-label>Fecha final</mat-label>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="ebookFilter.finalDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="ebookFilter.finalDate" (click)="clearDate('finalDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of elements -->
+    <div class="list">
+        <div *ngFor="let ebook of ebooksList; let i = index">
+            <div class="element-detail" (mouseover)="checkEbookHover(i, true)"  (mouseout)="checkEbookHover(i, false)">
+                <div class="portrait">
+                    <img [src]="ebook.image" alt="" style="width: auto; height: 240px">
+
+                    <div class="action-buttons" [ngStyle]="(ebookHoveredIndex == i) ? {'width': '30px', 'border': 'inherit'} : {'width': '0px', 'border': '0px'}">
+                        <mat-icon class="action-icon" style="color: #d70808" (click)="deleteEbook(ebook.id)">delete</mat-icon>
+                        <mat-icon class="action-icon" style="color: #f5c514" (click)="setEdition(i, ebook.id); showCreateNewEbookModal(true)">edit</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <span class="name-label">{{ ebook.name }}</span>
+                    <div> 
+                        <span class="out-date-label" style="margin-left: 7px">{{ ebook.out }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

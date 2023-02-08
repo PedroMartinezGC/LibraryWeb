@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'AnekTamil';
+    src: url('assets/fonts/AnekTamilRegular.ttf');
+}
+@font-face {
+    font-family: 'Staatliches';
+    src: url('assets/fonts/StaatlichesRegular.ttf');
+}
+
+*{
+    color: rgb(253, 246, 232);;
+}
+
+body{
+    background: rgb(21, 21, 21);
+    margin: 0px;
+    padding: 0px;
+}
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+
+// A. Material datepicker styles
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+   
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+} 
+   
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: white !important;;
+}
+   
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+   
+mat-datepicker-toggle {
+    color: white !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix{
+    display: flex !important;
+}
+
+.mat-form-field-infix {
+    display: flex !important;
+}
+
+.mat-datepicker-toggle{
+    margin: -20px 0px 0px 20px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(255 255 255 / 2%);
+    border-bottom: 1px solid white;
+}
+
+.mat-button-wrapper span{
+    color: black;
+}
+
+.mat-calendar-abbr{
+    color: black;
+}
+
+//AM Select
+
+.custom-selector .mat-form-field-infix{
+    padding: 1px;
+}
+
+.mat-option.mat-active{
+    background: rgb(0 0 0 / 83%);
+}
+
+.mat-option{
+    background: rgba(18, 18, 18, 0.83);
+}
+
+.mat-option.mat-focus{
+    background: rgba(15, 15, 15, 0.83);
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: rgb(0 0 0 / 83%);
+}
+
+.mat-option:hover {
+    background: rgba(15, 15, 15, 0.883) !important;
+}
+
+// AM Input
+
+.mat-form-field .mat-form-field-flex{
+    border-bottom: 1px solid white;
+}
+
+// AM Dialog
+.alert-dialog mat-dialog-container{
+    background-color: red !important;
+    position: relative;
+}
+
+.copnfirm-dialog mat-dialog-container{
+    background-color: rgb(253, 246, 232) !important;
+    position: relative;
+}
+
+
+// AM Snackbar
+.snackbar-green{
+    background: green;
+}
+.snackbar-blue{
+    background: rgb(16, 72, 163);
+}
+.snackbar-red{
+    background: red;
+}

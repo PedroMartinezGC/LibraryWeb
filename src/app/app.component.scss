@@ -1,0 +1,65 @@
+
+.menu-large{
+    font-family: 'AnekTamil';
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 30px 22px 0px 60px;
+    margin-right: 18px;
+    margin-bottom: 34px;
+    width: fit-content;
+}
+
+.menu-line{
+    border-bottom: 1px solid;
+    position: absolute;
+    width: 0px;
+    top: 77px;
+    transition-property: width;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-title{
+    font-family: 'Staatliches';
+    font-size: 52px;
+    margin-right: 20px;
+}
+
+.menu-link{
+    display: inline-block;
+    padding: 11px;
+    font-size: 18px;
+    transition: 400ms ease-in-out all;
+}
+
+.menu-link:hover{
+    cursor: pointer;
+    background: rgba(253, 246, 232, 0.204);
+}
+
+.active-games{
+    color: #f01c9c;
+}
+
+.active-movies{
+    color: #798df7;
+}
+
+.active-ebooks{
+    color: #f44336;
+}
+
+.logout{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-left: 30px;
+}
+
+.logout mat-icon{
+    font-size: 16px;
+    margin-top: 1px;
+}

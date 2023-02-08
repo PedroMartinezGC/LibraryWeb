@@ -1,0 +1,10 @@
+
+<div class="search-box" (mouseover)="isHover=true" (mouseout)="isHover=false">
+    <input #searchbar type="text"      [placeholder]="placeholder" class="search-input" (focus)="isFocus=true" (blur)="isFocus=false"
+           [(ngModel)]="textForSearch" (ngModelChange)="checkSearchbarChanges()" [ngStyle]="!isSearchbarEmpty ? {'margin-left': '8px'} : {'margin-left': '0px'}" />
+
+    <span class="search-btn" [ngStyle]="(isFocus || isHover)? {'background': color} : {'background': 'inherit'}">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">search</mat-icon>
+    </span>
+</div>
+

@@ -1,0 +1,124 @@
+<div class="content" #pageContent>
+
+    <div style="display: flex; justify-content: flex-start; align-items: center">
+        <div><span class="title">Mis Videojuegos</span></div>
+
+        <!-- Add element button -->
+        <div>
+            <button class="add-button" mat-raised-button color="primary" (click)="setAddition()">
+                <mat-icon class="add-icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home">add</mat-icon>Videojuego
+            </button>
+        </div>
+
+        <!-- Searchbar -->
+        <div class="searchbar">
+            <app-custom-searchbar placeholder="Busque su videojuego..." (inputChange)="getSearchbarText($event)" color="#f01c9c"></app-custom-searchbar>
+        </div>
+
+        <!-- Add/edit element inputs (emerging window) -->
+        <div #addNewModal class="add-new" [ngClass]="(gameEditedIndex != undefined) ? 'edit' : ''">
+            <mat-icon matDatepickerToggleIcon class="close-button" (click)="showCreateNewGameModal(false)">close</mat-icon>
+            <div class="add-new-inputs">
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [(ngModel)]="gameInputs.name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" color="accent">
+                        <mat-label>Fecha Lanzamiento</mat-label>
+                        <input matInput [(ngModel)]="gameInputs.out">
+                    </mat-form-field>
+                </div>
+                <div class="custom-selector">
+                    <mat-form-field appearance="fill" color="accent">
+                        <mat-label>Plataforma</mat-label>
+                        <mat-select [(value)]="gameInputs.platform">
+                          <mat-option value="PS2">PS2</mat-option>
+                          <mat-option value="PS3">PS3</mat-option>
+                          <mat-option value="PS4">PS4</mat-option>
+                          <mat-option value="PS5">PS5</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <input class="input-file" type="file" (change)="imageChanged($event)">
+                    <div class="selected-file">{{ gameInputs.image }}</div>
+                </div>
+            </div>
+
+            <!-- Confirm save/edit buttons -->
+            <div>
+                <button class="save-button" mat-raised-button color="primary" (click)="(gameEditedIndex != undefined) ? editGame() : addGame()">
+                    <span *ngIf="gameEditedIndex == undefined" style="color: black">Guardar</span>
+                    <span *ngIf="gameEditedIndex != undefined" style="color: black">Editar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter inputs -->
+    <div class="filter">
+        <div class="date-filter">
+            <div>
+                <mat-form-field color="accent" appearance="fill">
+                    <mat-label>Fecha inicial</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]="gameFilter.startDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="gameFilter.startDate" (click)="clearDate('startDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field color="accent" appearance="fill">
+                    <mat-label>Fecha final</mat-label>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="gameFilter.finalDate" (dateChange)="filterData()" readonly="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker-toggle matSuffix *ngIf="gameFilter.finalDate" (click)="clearDate('finalDate')">
+                        <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>Plataforma</mat-label>
+                    <mat-select [(value)]="gameFilter.platform" (selectionChange)="filterData()">
+                      <mat-option value="all">Todas</mat-option>
+                      <mat-option value="PS2">PS2</mat-option>
+                      <mat-option value="PS3">PS3</mat-option>
+                      <mat-option value="PS4">PS4</mat-option>
+                      <mat-option value="PS5">PS5</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of elements -->
+    <div class="list">
+        <div *ngFor="let game of gamesList; let i = index">
+            <div class="element-detail" (mouseover)="checkGameHover(i, true)"  (mouseout)="checkGameHover(i, false)">
+                <div class="portrait">
+                    <img [src]="game.image" alt="" style="width: auto; height: 240px">
+
+                    <div class="action-buttons" [ngStyle]="(gameHoveredIndex == i) ? {'width': '30px', 'border': 'inherit'} : {'width': '0px', 'border': '0px'}">
+                        <mat-icon class="action-icon" style="color: #d70808" (click)="deleteGame(game.id)">delete</mat-icon>
+                        <mat-icon class="action-icon" style="color: #f5c514" (click)="setEdition(i, game.id); showCreateNewGameModal(true)">edit</mat-icon>
+                    </div>
+                </div>
+                <div>
+                    <span class="name-label">{{ game.name }}</span>
+                    <div>
+                        <span class="out-date-label">{{ game.platform }}</span>  
+                        <span class="out-date-label" style="margin-left: 7px">{{ game.out }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
