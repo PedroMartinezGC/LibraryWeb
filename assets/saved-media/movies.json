@@ -1,0 +1,111 @@
+[
+    {
+        "name":"Barry Lyndon",
+        "out":"1975",
+        "director": "Stanley Kubrik",
+        "gender": "Histórico",
+        "image": "assets/images/movies/barrylyndon.jpg",
+        "inserted": "01-05-2020",
+        "id": "1"
+    },
+    {
+        "name":"Naranja mecánica",
+        "out":"1971",
+        "director": "Stanley Kubrik",
+        "gender": "Suspense",
+        "image": "assets/images/movies/naranjamec.jpg",
+        "inserted": "01-02-2021",
+        "id": "2"
+    },
+    {
+        "name":"El beso del asesino",
+        "out":"1955",
+        "director": "Stanley Kubrik",
+        "gender": "Acción",
+        "image": "assets/images/movies/elbesodelasesino.jpg",
+        "inserted": "01-02-2022",
+        "id": "3"
+    },
+    {
+        "name":"Senderos de Gloria",
+        "out":"1957",
+        "director": "Stanley Kubrik",
+        "gender": "Histórico",
+        "image": "assets/images/movies/senderosdegloria.jpg",
+        "inserted": "11-02-2020",
+        "id": "4"
+    },
+    {
+        "name":"Las dos caras de la Verdad",
+        "out":"1997",
+        "director": "Gregory Hoblit",
+        "gender": "Thriller",
+        "image": "assets/images/movies/lasdoscaras.jpg",
+        "inserted": "15-03-2019",
+        "id": "5"
+    },
+    {
+        "name":"El pasajero",
+        "out":"2018",
+        "director": "Jaume Collet-Serra",
+        "gender": "Acción",
+        "image": "assets/images/movies/elpasajero.jpg",
+        "inserted": "30-12-2018",
+        "id": "6"
+    },
+    {
+        "name":"The conjuring",
+        "out":"2013",
+        "director": "James Wan",
+        "gender": "Acción",
+        "image": "assets/images/movies/theconjuring.jpg",
+        "inserted": "30-11-2018",
+        "id": "7"
+    },
+    {
+        "name":"Smile",
+        "out":"2022",
+        "director": "Parker Finn",
+        "gender": "Suspense",
+        "image": "assets/images/movies/smile.jpg",
+        "inserted": "30-12-2019",
+        "id": "8"
+    },
+    {
+        "name":"El último duelo",
+        "out":"2021",
+        "director": "Ridley Scott",
+        "gender": "Histórico",
+        "image": "assets/images/movies/elultimoduelo.jpg",
+        "inserted": "15-12-2020",
+        "id": "9"
+    },
+    {
+        "name":"Gladiator",
+        "out":"2001",
+        "director": "Ridley Scott",
+        "gender": "Histórico",
+        "image": "assets/images/movies/gladiator.jpg",
+        "inserted": "30-12-2018",
+        "id": "10"
+    },
+    {
+        "name":"La matanza de Texas",
+        "out":"1974",
+        "director": "Tobe Hopper",
+        "gender": "Histórico",
+        "image": "assets/images/movies/lamatanzadetexas.jpg",
+        "inserted": "05-12-2021",
+        "id": "11"
+    },
+    {
+        "name":"Canino",
+        "out":"2010",
+        "director": "Yorgos Lanthimos",
+        "gender": "Suspense",
+        "image": "assets/images/movies/canino.jpg",
+        "inserted": "30-12-2018",
+        "id": "12"
+    }
+    
+]
