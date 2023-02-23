@@ -2,12 +2,14 @@
 <div *ngIf="currentPage != 'login'" #menuLine class="menu-line"></div>
 <div *ngIf="currentPage != 'login'" class="menu-large">
     <div class="menu-title">Mi biblioteca</div>
-    <div class="menu-link" routerLink="games" [ngClass]="currentPage == 'games' ? 'active-games' : ''">Videojuegos</div>
-    <div class="menu-link" routerLink="movies" [ngClass]="currentPage == 'movies' ? 'active-movies' : ''">Películas</div>
-    <div class="menu-link" routerLink="ebooks" [ngClass]="currentPage == 'ebooks' ? 'active-ebooks' : ''">e-Books</div>
-    <div class="menu-link logout" (click)="logout()">
-        <div>Salir</div>
-        <div><mat-icon>logout</mat-icon></div>
+    <div class="menu-links">
+        <div class="menu-link" routerLink="games" [ngClass]="currentPage == 'games' ? 'active-games' : ''">Videojuegos</div>
+        <div class="menu-link" routerLink="movies" [ngClass]="currentPage == 'movies' ? 'active-movies' : ''">Películas</div>
+        <div class="menu-link" routerLink="ebooks" [ngClass]="currentPage == 'ebooks' ? 'active-ebooks' : ''">e-Books</div>
+        <div class="menu-link logout" (click)="logout()">
+            <div>Salir</div>
+            <div><mat-icon>logout</mat-icon></div>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>
