@@ -146,7 +146,7 @@ export class EbooksComponent implements OnInit {
 
     let newEbook = this.utilsSrv.createDeepCopy(this.ebookInputs); // for losing the two way data binding between inputs and the new ebook
 
-    if( !this.ebookInputs.name || !this.ebookInputs.out ){
+    if( !this.ebookInputs.name || !this.ebookInputs.out ){ 
       this.notificationsSrv.showAlert('Introduzca un nombre y fecha de lanzamiento.');
     }else{
       this.ebooksSaved.unshift(newEbook);
